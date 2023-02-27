@@ -1,0 +1,9 @@
+<h1>All vehicles</h1>
+
+<ul>
+  <% @vehicles.each do |vehicle| %>
+    <li>
+      <%= vehicle.name %>
+    </li>
+  <% end %>
+</ul>

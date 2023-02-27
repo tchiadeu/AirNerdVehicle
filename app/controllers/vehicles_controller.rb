@@ -13,8 +13,12 @@ class VehiclesController < ApplicationController
 
   def create
     @vehicle = Vehicle.new(vehicle_params)
-    @vehicle.save
-    redirect_to vehicle_path(@vehicle)
+    @vehicle.user = current_user
+    if @vehicle.save
+      redirect_to vehicle_path(@vehicle)
+    else
+      render 'new', status: :unprocessable_entity
+    end
   end
 
   def edit
@@ -45,6 +49,6 @@ class VehiclesController < ApplicationController
   end
 
   def vehicle_params
-    params.require(:vehicle).permit(:name, :image, :price, :city, :category, :available)
+    params.require(:vehicle).permit(:name, :image, :price, :city, :category, :available, :user)
   end
 end

@@ -5,5 +5,3 @@ Vehicle.create(user_id: 1, name: 'Faucon Millenium', price: 1000, city: 'Kiev', 
 Vehicle.create(user_id: 1, name: 'Hollandais Volant', price: 700, city: 'Saint-Domingue', category: 'Fantasy', available: true, image: 'https://i.pinimg.com/736x/23/4c/9f/234c9f872637c7d20d75a1294df2fa2c.jpg')
 Vehicle.create(user_id: 1, name: 'Batmobile', price: 190, city: 'Gotham City', category: 'Superheroes', available: true, image: 'https://images.hdqwalls.com/wallpapers/batman-batmobile-img.jpg')
 Vehicle.create(user_id: 1, name: 'Toyota Fast & Furious', price: 150, city: 'Los Angeles', category: 'Classical', available: true, image: 'https://i.pinimg.com/originals/68/1b/54/681b5411369353221a1109fbaff9237b.jpg')
-
-# It actually doesn't work because "undefined method email for vehicles ???"

@@ -1,7 +1,19 @@
-<h1>Book one of our wonderful vehicles</h1>
-<h1>User wants your Flying Dutchman</h1>
 
-<% duration = @booking.end - @booking.start %>
-  <p>Your reservation starts on <%= @booking.start %></p>
-  <p>Your reservation ends on <%= @booking.end %></p>
-  <p>You have booked the vehicle for <%= duration.to_i %> days</p>
+<div class= "container">
+
+  <div>
+    <h1 class= "title">You have booked the <%= @booking.vehicle.name %></h1>
+  </div>
+  <div>
+    <img src= <%= @booking.vehicle.image %> alt="" class= "img-bookings">
+  </div>
+  <% duration = @booking.end - @booking.start %>
+  <div class= "description">
+    <p>Your reservation starts on <%= @booking.start %></p>
+  </div>
+  <div class= "description">
+    <p>Your reservation ends on <%= @booking.end %></p>
+  </div>
+  <div class= "description">
+    <p>You have booked the vehicle for <%= duration.to_i %> days</p>
+  </div>

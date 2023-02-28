@@ -1,18 +1,20 @@
 <h1>All vehicles</h1>
 
 <div class="cards">
-<div class="card-trip">
   <% @vehicles.each do |vehicle| %>
-      <%= link_to vehicle_path(vehicle) do %>
-        <img src="<%= vehicle.image %>" />
-        <div class="card-trip-infos">
-          <div>
-            <h2><%= vehicle.name %></h2>
-            <p><%= vehicle.city %> | <%= vehicle.category %></p>
+    <div class="card-category">
+      <div class="card-trip">
+        <%= link_to vehicle_path(vehicle) do %>
+          <img src="<%= vehicle.image %>" />
+          <div class="card-trip-infos">
+            <div>
+              <h2><%= vehicle.name %></h2>
+              <p><%= vehicle.city %> | <%= vehicle.category %></p>
+            </div>
+            <h2 class="card-trip-pricing"><%= vehicle.price %>€</h2>
           </div>
-          <h2 class="card-trip-pricing"><%= vehicle.price %>€</h2>
-        </div>
-      <% end %>
+        <% end %>
+      </div>
+    </div>
   <% end %>
-</div>
 </div>

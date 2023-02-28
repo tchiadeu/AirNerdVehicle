@@ -1,2 +1,7 @@
 <h1>Book one of our wonderful vehicles</h1>
 <h1>User wants your Flying Dutchman</h1>
+
+<% duration = @booking.end - @booking.start %>
+  <p>Your reservation starts on <%= @booking.start %></p>
+  <p>Your reservation ends on <%= @booking.end %></p>
+  <p>You have booked the vehicle for <%= duration.to_i %> days</p>

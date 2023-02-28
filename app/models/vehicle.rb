@@ -1,5 +1,6 @@
 class Vehicle < ApplicationRecord
   CATEGORIES = ['SF', 'Fantasy', 'Classical', 'Superheroes']
+  has_many :bookings, dependent: :destroy
   validates :name, presence: true
   validates :price, presence: true
   validates :city, presence: true

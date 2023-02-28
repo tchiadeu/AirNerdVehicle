@@ -1,15 +1,19 @@
-  <div class="card-show" style="background-image: url(<%= "#{@vehicle.image}" %>)">
-    <h2><%= @vehicle.name %></h2>
-    <p><%= @vehicle.city %> | <%= @vehicle.category %></p>
-    <h2 class="card-trip-pricing"><%= @vehicle.price %>€</h2>
+<div class="banner" style="background-image: url(<%= "#{@vehicle.image}" %>)">
+  <div class="card-details">
+    <h2 class="card-name"><%= @vehicle.name %></h2>
+    <p class="card-location"><%= @vehicle.city %> | <%= @vehicle.category %></p>
+    <h2 class="card-price"><%= @vehicle.price %>€</h2>
   </div>
+</div>
 
-  <% if policy(@vehicle).edit? %>
-    <%= link_to "Edit this vehicle", edit_vehicle_path(@vehicle) %> |
-  <% end %>
+<% if policy(@vehicle).edit? %>
+  <div class="edit-link">
+    <%= link_to "Edit this vehicle", edit_vehicle_path(@vehicle) %>
+  </div>
+<% end %>
 
-<%= simple_form_for [@vehicle, @booking] do |f| %>
-  <%= f.input :start %>
-  <%= f.input :end %>
-  <%= f.submit %>
+<%= simple_form_for [@vehicle, @booking], html: { class: "booking-form" } do |f| %>
+  <%= f.input :start, label: "Start date", input_html: { class: "form-control" } %>
+  <%= f.input :end, label: "End date", input_html: { class: "form-control" } %>
+  <%= f.submit "Book now", class: "btn btn-primary" %>
 <% end %>

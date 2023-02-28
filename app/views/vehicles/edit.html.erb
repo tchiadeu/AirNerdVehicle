@@ -1,0 +1,8 @@
+<%= simple_form_for(@vehicle) do |f| %>
+  <%= f.input :name %>
+  <%= f.input :category, collection: Vehicle::CATEGORIES %>
+  <%= f.input :city %>
+  <%= f.input :price %>
+  <%= f.input :image %>
+  <%= f.submit 'update my vehicle' %>
+<% end %>

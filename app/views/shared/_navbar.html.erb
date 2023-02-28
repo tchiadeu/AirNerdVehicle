@@ -11,13 +11,13 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto">
         <% if user_signed_in? %>
-          <li class="nav-item active">
-            <%= link_to "Home", "#", class: "nav-link" %>
+          <li class="btn btn-primary mx-1">
+            <%= link_to "Home", "/vehicles", class: "nav-link" %>
           </li>
-          <li class="nav-item">
+          <li class="btn btn-primary mx-1">
             <%= link_to "Messages", "#", class: "nav-link" %>
           </li>
-          <li class="nav-item dropdown">
+          <li class="btn btn-primary mx-1 dropdown">
             <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
               <%= link_to "Action", "#", class: "dropdown-item" %>
@@ -26,8 +26,11 @@
             </div>
           </li>
         <% else %>
-          <li class="nav-item">
+          <li class="btn btn-primary mx-1">
             <%= link_to "Login", new_user_session_path, class: "nav-link" %>
+          </li>
+          <li class="btn btn-primary mx-1">
+            <%= link_to "Sign up", new_user_registration_path, class: "nav-link" %>
           </li>
         <% end %>
       </ul>

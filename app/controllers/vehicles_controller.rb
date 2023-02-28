@@ -1,19 +1,24 @@
 class VehiclesController < ApplicationController
   def index
     @vehicles = Vehicle.all
+    authorize @vehicles
   end
 
   def show
     set_vehicle
+    @booking = Booking.new
+    authorize @vehicle
   end
 
   def new
     @vehicle = Vehicle.new
+    authorize @vehicle
   end
 
   def create
     @vehicle = Vehicle.new(vehicle_params)
     @vehicle.user = current_user
+    authorize @vehicle
     if @vehicle.save
       redirect_to vehicle_path(@vehicle)
     else
@@ -23,10 +28,12 @@ class VehiclesController < ApplicationController
 
   def edit
     set_vehicle
+    authorize @vehicle
   end
 
   def update
     set_vehicle
+    authorize @vehicle
     if @vehicle.update(vehicle_params)
       redirect_to @vehicle
     else

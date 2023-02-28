@@ -3,3 +3,13 @@
     <p><%= @vehicle.city %> | <%= @vehicle.category %></p>
     <h2 class="card-trip-pricing"><%= @vehicle.price %>€</h2>
   </div>
+
+  <% if policy(@vehicle).edit? %>
+    <%= link_to "Edit this vehicle", edit_vehicle_path(@vehicle) %> |
+  <% end %>
+
+<%= simple_form_for [@vehicle, @booking] do |f| %>
+  <%= f.input :start %>
+  <%= f.input :end %>
+  <%= f.submit %>
+<% end %>

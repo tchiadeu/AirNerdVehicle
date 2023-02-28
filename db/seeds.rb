@@ -20,4 +20,4 @@ Booking.destroy_all
 date1 = Date.new(2023, 2, 1)
 date2 = Date.new(2023, 2, 5)
 
-Booking.create(start: date1, end: date2, user_id: User.first.id, vehicle_id: Vehicle.first.id)
+Booking.create(start: date1, end: date2, user_id: User.last.id, vehicle_id: Vehicle.first.id)

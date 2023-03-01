@@ -1,19 +1,27 @@
-
-<div class= "container">
-
-  <div>
-    <h1 class= "title">You have booked the <%= @booking.vehicle.name %></h1>
+<div class= "container-booking">
+  <div class= "title-main">
+    <div  class= "title-booking">
+      <h1> <i class="fa-solid fa-shuttle-space"></i>       Selected: <%= @booking.vehicle.name %></h1>
+    </div>
+    <div>
+      <%= link_to 'Cancel your booking' %>
+    </div>
   </div>
-  <div>
-    <img src= <%= @booking.vehicle.image %> alt="" class= "img-bookings">
+  <div class="card-booking">
+    <div>
+      <img src= <%= @booking.vehicle.image %> alt="" class= "img-bookings">
+    </div>
+    <% duration = @booking.end - @booking.start %>
+    <div class= "card-description-booking">
+      <div class= "description-booking">
+        <h2><i class="fa-regular fa-calendar"></i> &nbsp; From <%= @booking.start.strftime("%B %e, %Y") %> to <%= @booking.end.strftime("%B %e, %Y") %></h2>
+      </div>
+      <div class= "description-booking">
+        <h2><i class="fa-regular fa-clock"></i> &nbsp; <%= duration.to_i %> days</h2>
+      </div>
+      <div class= "description-booking">
+        <h2><i class="fa-solid fa-coins"></i> &nbsp; <%= @booking.vehicle.price.to_i * duration.to_i %> <i class="fa-solid fa-euro-sign"></i></h2>
+      </div>
+    </div>
   </div>
-  <% duration = @booking.end - @booking.start %>
-  <div class= "description">
-    <p>Your reservation starts on <%= @booking.start %></p>
-  </div>
-  <div class= "description">
-    <p>Your reservation ends on <%= @booking.end %></p>
-  </div>
-  <div class= "description">
-    <p>You have booked the vehicle for <%= duration.to_i %> days</p>
-  </div>
+</div>

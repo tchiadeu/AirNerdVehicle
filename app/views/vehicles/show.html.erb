@@ -1,19 +1,25 @@
-<div class="banner" style="background-image: url(<%= "#{@vehicle.image}" %>)">
-  <div class="card-details">
-    <h2 class="card-name"><%= @vehicle.name %></h2>
-    <p class="card-location"><%= @vehicle.city %> | <%= @vehicle.category %></p>
-    <h2 class="card-price"><%= @vehicle.price %>€</h2>
+<div class="banner-show" style="background-image: url(<%= "#{@vehicle.image}" %>)">
+  <div class="container mx-5">
+    <div class="card-bottom-div">
+      <div class="card-details">
+        <h2 class="card-name"><%= @vehicle.name %></h2>
+        <p class="card-location"><%= @vehicle.city %> | <%= @vehicle.category %></p>
+        <h2 class="card-price"><%= @vehicle.price %>€</h2>
+      </div>
+
+      <div class="card-details form-booking-vehicle">
+        <% if policy(@vehicle).edit? == false %>
+          <%= simple_form_for [@vehicle, @booking], html: { class: "booking-form" } do |f| %>
+            <%= f.input :start, label: "Start date", input_html: { class: "form-control" } %>
+            <%= f.input :end, label: "End date", input_html: { class: "form-control" } %>
+            <%= f.submit "Book now", class: "btn btn-primary" %>
+          <% end %>
+        <% else %>
+          <div class="edit-link">
+            <%= link_to "Edit this vehicle", edit_vehicle_path(@vehicle), class: "btn btn-primary" %>
+          </div>
+        <% end %>
+      </div>
+    </div>
   </div>
 </div>
-
-<% if policy(@vehicle).edit? %>
-  <div class="edit-link">
-    <%= link_to "Edit this vehicle", edit_vehicle_path(@vehicle) %>
-  </div>
-<% end %>
-
-<%= simple_form_for [@vehicle, @booking], html: { class: "booking-form" } do |f| %>
-  <%= f.input :start, label: "Start date", input_html: { class: "form-control" } %>
-  <%= f.input :end, label: "End date", input_html: { class: "form-control" } %>
-  <%= f.submit "Book now", class: "btn btn-primary" %>
-<% end %>

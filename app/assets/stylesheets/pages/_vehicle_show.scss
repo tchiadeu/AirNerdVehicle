@@ -1,0 +1,42 @@
+@font-face {
+  font-family: 'kanit';
+  src: url('kanit-bold.woff2') format('woff2'),
+  url('kanit-bold.woff') format('woff');
+}
+
+.form-booking-vehicle {
+  color: white;
+  font-size: x-large;
+  border-radius: 8px;
+  background-color: rgba(200, 200, 200, .4);
+  padding: 10px;
+}
+
+.banner-show {
+  position: relative;
+  height: 100vh;
+  background-size: cover;
+  background-position: inherit;
+}
+
+.card-bottom-div {
+  position: absolute;
+  width: 100vw;
+  display: flex;
+  justify-content: space-around;
+  bottom: 0;
+  margin-bottom: 30px;
+}
+
+.card-details {
+  margin: 100px 150px 0;
+
+  h2 {
+  font-family: 'kanit', sans-serif;
+  color: white;
+}
+  p {
+  font-family: 'kanit', sans-serif;
+  color: white;
+}
+}

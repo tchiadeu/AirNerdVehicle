@@ -1,27 +1,57 @@
-.container {
+@font-face {
+  font-family: 'kanit';
+  src: url('kanit-bold.woff2') format('woff2'),
+  url('kanit-bold.woff') format('woff');
+}
+
+.title-main {
   display: flex;
-  width: 80vw;
-  flex-direction: column;
+  padding-top: 100px;
+  padding-left: 50px;
+  justify-content: space-between;
+  margin-right: 80px;
+  margin-left: 30px;
+}
+
+.title-booking {
+  color: white;
+  font-family: 'kanit', sans-serif;
+  color: transparent;
+  text-transform: uppercase;
+  -webkit-text-stroke: 2px;
+  -webkit-text-stroke-color: white;
+}
+
+.container-booking {
+  width: 100vw;
+  height: 100vh;
   align-items: center;
+  background-color: black;
+  background: linear-gradient(to top, #4b4b4b 0%, #000000 40%);
 }
 
-.title {
-  justify-content: center;
-  background-color: black;
-  color: white;
-  border-radius: 15px;
-  padding: 15px;
+.card-booking{
+display: flex;
+justify-content: space-between;
+align-items: center;
+padding: 30px;
+margin: 50px 50px;
 }
 
-.description {
-  border: solid;
-  border-radius: 20px;
-  padding: 20px;
-  margin: 20px;
-  background-color: black;
+.card-description-booking {
+  display: flex;
+  flex-direction: column;
+  width: 800px;
+}
+
+.description-booking {
   color: white;
+  padding-top: 50px;
+  padding-left: 50px;
+  font-family: 'kanit', sans-serif;
 }
 
 .img-bookings {
   border-radius: 15px;
+  width: 500px;
 }

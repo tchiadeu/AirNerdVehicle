@@ -1,0 +1,12 @@
+<h1>Your current bookings</h1>
+  <div>
+    <p class="custom-booking-date"><%= Time.now.strftime("%A, %B %d, %Y") %> <%= Time.now.strftime("%H:%M:%S") %></p>
+  </div>
+
+<% @bookings.each do |booking| %>
+  <p><%= booking.end %></p>
+  <p><%= booking.vehicle.name %></p>
+  <div>
+        <img src= <%= booking.vehicle.image %> alt="" class= "img-bookings" width="100px">
+  </div>
+<% end %>

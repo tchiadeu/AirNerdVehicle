@@ -1,4 +1,8 @@
 class BookingsController < ApplicationController
+  def index
+    @bookings = Booking.where(vehicle_id: current_user.vehicles)
+  end
+
   def show
     @booking = Booking.find(params[:id])
     authorize @booking

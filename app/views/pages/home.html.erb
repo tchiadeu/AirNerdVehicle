@@ -1,7 +1,19 @@
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://i.pinimg.com/736x/62/b7/47/62b74710c3f1b9547e20fd2fb3a9522a--bttf-delorean-delorean-dmc-.jpg);">
-  <div class="container">
-    <h1>Air Nerd Vehicle ! </h1>
-    <p>Trouves le véhicule de tes rêves provenant de ton film préféré</p>
-    <a href=<%= vehicles_path %> class="btn btn-flat btn-primary">Select now</a>
+<div class="banner-home" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://c4.wallpaperflare.com/wallpaper/574/634/491/back-to-the-future-movie-back-to-the-future-delorean-illustration-wallpaper-preview.jpg);">
+  <div class="banner-informations">
+    <div>
+      <h1><span>Air Nerd Vehicle</span></h1>
+      <h1><span>Rent Best Vehicles</span></h1>
+      <h1><span>From Best Movies</span></h1>
+    </div>
+    <%= link_to vehicles_path do %>
+      <div class="cards">
+        <div class="card-seen" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://www.vroomly.com/media/images/Batmobile.width-500.webp)">
+          <h2>Discover Vehicles</h2>
+        </div>
+        <div class="card-hide" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTMoPueAdLHa-is9xfePf-jCjeXIr_jD8nl7w&usqp=CAU)">
+          <h2>Discover Vehicles</h2>
+        </div>
+      </div>
+    <% end %>
   </div>
 </div>

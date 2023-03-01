@@ -1,1 +1,157 @@
 // Specific CSS for your home-page
+@font-face {
+  font-family: 'kanit';
+  src: url('kanit-bold.woff2') format('woff2'),
+  url('kanit-bold.woff') format('woff');
+}
+
+.banner-home {
+  height: 100vh;
+  background-size: cover;
+  padding: 90px 0;
+
+  .banner-information {
+    text-align: center;
+  }
+
+  h1 {
+    font-family: 'kanit', sans-serif;
+    margin: 0 0 0 40px;
+    padding: 0;
+    text-transform: uppercase;
+    line-height: 1;
+    color: white;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+    font-size: calc(4000vw / 1018);
+    font-weight: bold;
+    overflow: hidden;
+
+    span {
+      display: inline-block;
+      animation: titleFadeIn .5s ease-in-out forwards;
+      transform: translateY(100%);
+    }
+
+    &:nth-child(2) {
+      color: transparent;
+      -webkit-text-stroke: 2px;
+      -webkit-text-stroke-color: white;
+
+      span {
+        animation-delay: 300ms;
+      }
+    }
+
+    &:last-child {
+      color: transparent;
+      -webkit-text-stroke: 2px;
+      -webkit-text-stroke-color: white;
+
+      span {
+        animation-delay: 600ms;
+      }
+    }
+  }
+
+  .cards {
+    position: relative;
+    height: 200px;
+    width: 350px;
+    margin: 40px 0 0 40px;
+    display: flex;
+    text-align: center;
+
+    h2 {
+      font-family: 'kanit', sans-serif;
+      font-weight: bold;
+      font-size: 30px;
+      text-shadow: 2px 2px 3px rgba(0,0,0,0.2);
+    }
+
+    .card-seen {
+      position: absolute;
+      left: 0;
+      top: 0;
+      visibility: hidden;
+      opacity: 0;
+      animation: cardFadeIn 2s ease-in-out forwards;
+      animation-delay: 900ms;
+      opacity: 1;
+      background-size: cover;
+      background-position: center;
+      height: 100%;
+      width: 100%;
+      color: white;
+      font-size: 24px;
+      font-weight: bold;
+      text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+      border-radius: 5px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.2);
+      display: inline-block;
+      border: solid white 2px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      &:hover {
+        animation: reverseCardFadeIn 1s ease-in-out forwards;
+      }
+    }
+
+    .card-hide {
+      position: absolute;
+      left: 0;
+      top: 0;
+      opacity: 0;
+      background-size: cover;
+      background-position: center;
+      height: 100%;
+      width: 100%;
+      color: white;
+      font-size: 24px;
+      font-weight: bold;
+      text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+      border-radius: 5px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.2);
+      display: inline-block;
+      border: solid white 2px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      &:hover {
+        animation: cardFadeIn 1s ease-in-out forwards;
+      }
+    }
+  }
+}
+
+@keyframes titleFadeIn {
+  0% {
+    transform: translateY(100%);
+  }
+  100% {
+    transform: translateY(0%);
+  }
+}
+
+
+@keyframes cardFadeIn {
+  0% {
+    visibility: visible;
+    opacity: 0;
+  } 100% {
+    visibility: visible;
+    opacity: 1;
+  }
+}
+
+@keyframes reverseCardFadeIn {
+  0% {
+    visibility: visible;
+    opacity: 1;
+  } 100% {
+    visibility: visible;
+    opacity: 0;
+  }
+}

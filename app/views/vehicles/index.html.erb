@@ -3,7 +3,7 @@
     <div class="cards">
       <% @vehicles.each do |vehicle| %>
         <div class="card-category">
-          <div class="card-trip">
+          <div class="card-trip darker-span">
             <%= link_to vehicle_path(vehicle), class:"text-decoration-none" do %>
               <img src="<%= vehicle.image %>" />
               <div class="card-vehicle-infos">
@@ -11,9 +11,13 @@
                   <h2><%= vehicle.name %></h2>
                   <p><%= vehicle.city %> | <%= vehicle.category %></p>
                 </div>
-                <h2 class="card-trip-pricing"><%= vehicle.price %>€</h2>
+                <div>
+                  <h2 class="card-trip-pricing"><%= vehicle.price %>€</h2>
+                </div>
               </div>
             <% end %>
+            <div class="card__shine"></div>
+            <div class="card__glare"></div>
           </div>
         </div>
       <% end %>

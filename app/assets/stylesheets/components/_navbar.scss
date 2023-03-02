@@ -24,3 +24,12 @@
   color: white;
   text-decoration: none;
 }
+
+.btn-opacity {
+  font-family: 'kanit', sans-serif;
+  font-weight: bold;
+  border-radius: 50px;
+  border: solid 3px white;
+  opacity: .8;
+  backdrop-filter: blur(6px);
+}

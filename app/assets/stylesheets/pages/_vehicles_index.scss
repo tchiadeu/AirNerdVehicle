@@ -1,14 +1,25 @@
 .grid-index-start {
-  padding: 80px 20px 0 20px;
-  background-color: rgba(10, 10, 10, 0.9);
+  padding: 80px 30px;
   text-decoration: none;
 }
 
 .card-vehicle-infos {
-  background-color: rgba(99, 92, 92, 0.4)
+  background-color: transparent;
+  display: flex;
+  justify-content: space-between;
 }
 
-.background-set {
-  background-color: rgba(10, 10, 10, 0.9);
-  height: 100vh;
+.darker-span {
+  opacity: .5;
+  border: solid white 2px;
+  transition: .3s;
+
+  &:hover {
+    opacity: .8;
+    transition: .3s;
+  }
+
+  img {
+    border-bottom: solid white 2px;
+  }
 }

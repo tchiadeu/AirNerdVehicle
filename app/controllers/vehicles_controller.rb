@@ -9,6 +9,14 @@ class VehiclesController < ApplicationController
     else
       @vehicles = Vehicle.all
     end
+    
+    @markers = @vehicles.geocoded.map do |vehicle|
+      {
+        lat: vehicle.latitude,
+        lng: vehicle.longitude,
+        info_window_html: render_to_string(partial: "info_window", locals: {vehicle: vehicle})
+      }
+    end
   end
 
   def owner_index

@@ -1,8 +1,15 @@
 class VehiclesController < ApplicationController
   def index
-    @vehicles = Vehicle.all
-    authorize @vehicles
-    # The `geocoded` scope filters only vehicles with coordinates
+    if params[:query].present?
+      sql_query = <<~SQL
+        vehicles.category ILIKE :query
+        OR vehicles.city ILIKE :query
+      SQL
+      @vehicles = Vehicle.where(sql_query, query: "%#{params[:query]}%")
+    else
+      @vehicles = Vehicle.all
+    end
+    
     @markers = @vehicles.geocoded.map do |vehicle|
       {
         lat: vehicle.latitude,
@@ -10,6 +17,11 @@ class VehiclesController < ApplicationController
         info_window_html: render_to_string(partial: "info_window", locals: {vehicle: vehicle})
       }
     end
+  end
+
+  def owner_index
+    @owner_vehicles = Vehicle.where(user_id: current_user)
+    authorize @owner_vehicles
   end
 
   def show

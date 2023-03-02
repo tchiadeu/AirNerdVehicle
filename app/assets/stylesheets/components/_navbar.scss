@@ -33,3 +33,21 @@
   opacity: .8;
   backdrop-filter: blur(6px);
 }
+
+.search {
+  background: transparent;
+  border: solid white 3px;
+  border-radius: 50px;
+  color: white;
+  font-family: 'kanit', sans-serif;
+  font-weight: bold;
+  text-align: center;
+}
+
+.btn-search {
+  background: none;
+  color: white;
+  font-family: 'kanit', sans-serif;
+  font-weight: bold;
+  display: none;
+}

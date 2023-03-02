@@ -21,4 +21,8 @@ class VehiclePolicy < ApplicationPolicy
   def update?
     record.user == user
   end
+
+  def owner_index?
+    true
+  end
 end

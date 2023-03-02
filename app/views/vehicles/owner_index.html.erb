@@ -1,7 +1,7 @@
 <div class="background-set">
   <div class="grid-index-start">
     <div class="cards">
-      <% @vehicles.each do |vehicle| %>
+      <% @owner_vehicles.each do |vehicle| %>
         <div class="card-category">
           <div class="card-trip darker-span">
             <%= link_to vehicle_path(vehicle), class:"text-decoration-none" do %>
@@ -16,16 +16,9 @@
                 </div>
               </div>
             <% end %>
-            <div class="card__shine"></div>
-            <div class="card__glare"></div>
           </div>
         </div>
       <% end %>
     </div>
-  </div>
-  <div style="width: 100%; height: 600px;"
-    data-controller="map"
-    data-map-markers-value="<%= @markers.to_json %>"
-    data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
   </div>
 </div>

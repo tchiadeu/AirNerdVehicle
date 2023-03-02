@@ -3,7 +3,20 @@
     <div  class= "title-booking">
       <h1> <i class="fa-solid fa-shuttle-space"></i>       Selected: <%= @booking.vehicle.name %></h1>
     </div>
-    <div>
+    <% if @booking.status == "Pending" %>
+      <div class= "booking-status-pending">
+        <%= @booking.status %>
+      </div>
+    <% elsif @booking.status == "accepted" %>
+      <div class= "booking-status-accepted">
+        <%= @booking.status %>
+      </div>
+    <% else %>
+      <div class= "booking-status-refused">
+          <%= @booking.status %>
+      </div>
+    <% end %>
+    <div class= "btn btn-opacity btn-outline-light mx-1">
       <%= link_to 'Cancel your booking' %>
     </div>
   </div>

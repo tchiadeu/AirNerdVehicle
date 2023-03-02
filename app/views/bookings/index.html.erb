@@ -1,6 +1,6 @@
-<div class="container">
+<div class="container pt-5">
     <div>
-      <h1 class="mt-5 text-white text-center">Your current bookings</h1>
+      <h1 class="text-white text-center pt-5">Your current bookings</h1>
     </div>
     <div>
       <p class="custom-booking-date text-white text-center">Current bookings requested : <%= Time.now.strftime("%A, %B %d, %Y") %> <%= Time.now.strftime("%H:%M:%S") %></p>
@@ -10,13 +10,15 @@
       <% @bookings.each do |booking| %>
         <% if booking.status == "Pending" %>
           <div class="card-trip darker-span no-darker">
-            <p><%= booking.user.last_name %></p>
-            <p>From <%= booking.start %> to <%= booking.end %></p>
-            <% duration = booking.end - booking.start %>
-            <p><%= booking.vehicle.price.to_i * duration.to_i %></p>
-            <p><%= booking.vehicle.name %></p>
-            <div class="booking-status-pending">
-              <%= booking.status %>
+            <div>
+              <p><%= booking.user.last_name %></p>
+              <p>From <%= booking.start %> to <%= booking.end %></p>
+              <% duration = booking.end - booking.start %>
+              <p><%= booking.vehicle.price.to_i * duration.to_i %></p>
+              <p><%= booking.vehicle.name %></p>
+              <div class="booking-status-pending">
+                <%= booking.status %>
+              </div>
             </div>
             <div>
               <img src= <%= booking.vehicle.image %> alt="" class= "img-bookings-mini">
@@ -34,13 +36,15 @@
           </div>
         <% elsif booking.status == "accepted" %>
           <div class="card-trip darker-span no-darker">
-            <p><%= booking.user.last_name %></p>
-            <p>From <%= booking.start %> to <%= booking.end %></p>
-            <% duration = booking.end - booking.start %>
-            <p><%= booking.vehicle.price.to_i * duration.to_i %></p>
-            <p><%= booking.vehicle.name %></p>
-            <div class="booking-status-accepted">
-              <%= booking.status %>
+            <div>
+              <p><%= booking.user.last_name %></p>
+              <p>From <%= booking.start %> to <%= booking.end %></p>
+              <% duration = booking.end - booking.start %>
+              <p><%= booking.vehicle.price.to_i * duration.to_i %></p>
+              <p><%= booking.vehicle.name %></p>
+              <div class="booking-status-accepted">
+                <%= booking.status %>
+              </div>
             </div>
             <div>
               <img src= <%= booking.vehicle.image %> alt="" class= "img-bookings-mini">
@@ -48,13 +52,15 @@
           </div>
         <% else %>
           <div class="card-trip darker-span no-darker">
-            <p><%= booking.user.last_name %></p>
-            <p>From <%= booking.start %> to <%= booking.end %></p>
-            <% duration = booking.end - booking.start %>
-            <p><%= booking.vehicle.price.to_i * duration.to_i %></p>
-            <p><%= booking.vehicle.name %></p>
-            <div class="booking-status-refused">
-              <%= booking.status %>
+            <div class="booking-card-infos">
+              <p><%= booking.user.last_name %></p>
+              <p>From <%= booking.start %> to <%= booking.end %></p>
+              <% duration = booking.end - booking.start %>
+              <p><%= booking.vehicle.price.to_i * duration.to_i %></p>
+              <p><%= booking.vehicle.name %></p>
+              <div class="booking-status-refused">
+                <%= booking.status %>
+              </div>
             </div>
             <div>
               <img src= <%= booking.vehicle.image %> alt="" class= "img-bookings-mini">
@@ -67,13 +73,15 @@
       <% @rents.each do |booking| %>
         <% if booking.status == "Pending" %>
           <div class="card-trip darker-span no-darker">
-            <p><%= booking.user.last_name %></p>
-            <p>From <%= booking.start %> to <%= booking.end %></p>
-            <% duration = booking.end - booking.start %>
-            <p><%= booking.vehicle.price.to_i * duration.to_i %></p>
-            <p><%= booking.vehicle.name %></p>
-            <div class="booking-status-pending">
-              <%= booking.status %>
+            <div class="booking-card-infos">
+              <p><%= booking.user.last_name %></p>
+              <p>From <%= booking.start %> to <%= booking.end %></p>
+              <% duration = booking.end - booking.start %>
+              <p><%= booking.vehicle.price.to_i * duration.to_i %></p>
+              <p><%= booking.vehicle.name %></p>
+              <div class="booking-status-pending">
+                <%= booking.status %>
+              </div>
             </div>
             <div>
               <img src= <%= booking.vehicle.image %> alt="" class= "img-bookings-mini">
@@ -81,13 +89,15 @@
           </div>
         <% elsif booking.status == "accepted" %>
           <div class="card-trip darker-span no-darker">
-            <p><%= booking.user.last_name %></p>
-            <p>From <%= booking.start %> to <%= booking.end %></p>
-            <% duration = booking.end - booking.start %>
-            <p><%= booking.vehicle.price.to_i * duration.to_i %></p>
-            <p><%= booking.vehicle.name %></p>
-            <div class="booking-status-accepted">
-              <%= booking.status %>
+            <div>
+              <p><%= booking.user.last_name %></p>
+              <p>From <%= booking.start %> to <%= booking.end %></p>
+              <% duration = booking.end - booking.start %>
+              <p><%= booking.vehicle.price.to_i * duration.to_i %></p>
+              <p><%= booking.vehicle.name %></p>
+              <div class="booking-status-accepted">
+                <%= booking.status %>
+              </div>
             </div>
             <div>
               <img src= <%= booking.vehicle.image %> alt="" class= "img-bookings-mini">
@@ -95,13 +105,15 @@
           </div>
         <% else %>
           <div class="card-trip darker-span no-darker">
-            <p><%= booking.user.last_name %></p>
-            <p>From <%= booking.start %> to <%= booking.end %></p>
-            <% duration = booking.end - booking.start %>
-            <p><%= booking.vehicle.price.to_i * duration.to_i %></p>
-            <p><%= booking.vehicle.name %></p>
-            <div class="booking-status-refused">
-              <%= booking.status %>
+            <div>
+              <p><%= booking.user.last_name %></p>
+              <p>From <%= booking.start %> to <%= booking.end %></p>
+              <% duration = booking.end - booking.start %>
+              <p><%= booking.vehicle.price.to_i * duration.to_i %></p>
+              <p><%= booking.vehicle.name %></p>
+              <div class="booking-status-refused">
+                <%= booking.status %>
+              </div>
             </div>
             <div>
               <img src= <%= booking.vehicle.image %> alt="" class= "img-bookings-mini">

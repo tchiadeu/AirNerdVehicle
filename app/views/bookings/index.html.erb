@@ -1,21 +1,26 @@
 <%= render "shared/navbar" %>
-<div class="container pt-5">
-    <div>
-      <h1 class="text-white text-center pt-5">Your current bookings</h1>
-    </div>
-    <div>
-      <p class="custom-booking-date text-white text-center">Current bookings requested : <%= Time.now.strftime("%A, %B %d, %Y") %> <%= Time.now.strftime("%H:%M:%S") %></p>
-    </div>
-  <div class= "booking-list-columns">
-    <div class="text-white cards border-bookings-card-left">
-      <% @bookings.each do |booking| %>
-        <%= render partial: "bookings/booking", locals: { booking: booking } %>
-      <% end %>
-    </div>
-    <div class="text-white cards border-bookings-card-right">
-      <% @rents.each do |booking| %>
-        <%= render partial: "bookings/rent", locals: { booking: booking } %>
-      <% end %>
+<div class="container py-5">
+  <div>
+    <h1 class="text-white text-center pt-5">Your current bookings</h1>
+  </div>
+  <div>
+    <p class="custom-booking-date text-white text-center">Current bookings requested : <%= Time.now.strftime("%A, %B %d, %Y") %> <%= Time.now.strftime("%H:%M:%S") %></p>
+  </div>
+  <div data-controller='reveal' data-reveal-hidden-class="d-none">
+      <div class='d-flex justify-content-center mb-3'>
+        <button class='text-center' data-action="click->reveal#toggle">Switch Rents / Bookings</button>
+      </div>
+    <div class="booking-list-columns justify-content-center">
+      <div data-reveal-target="item" class="text-white cards border-bookings-card-left">
+        <% @bookings.each do |booking| %>
+          <%= render partial: "bookings/booking", locals: { booking: booking } %>
+        <% end %>
+      </div>
+      <div data-reveal-target="item" class="text-white cards border-bookings-card-right d-none">
+        <% @rents.each do |booking| %>
+          <%= render partial: "bookings/booking", locals: { booking: booking } %>
+        <% end %>
+      </div>
     </div>
   </div>
 </div>

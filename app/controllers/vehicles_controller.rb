@@ -9,7 +9,7 @@ class VehiclesController < ApplicationController
     else
       @vehicles = Vehicle.all
     end
-    
+
     @markers = @vehicles.geocoded.map do |vehicle|
       {
         lat: vehicle.latitude,

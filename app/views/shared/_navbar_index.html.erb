@@ -1,4 +1,4 @@
-<div class="navbar navbar-expand-sm navbar-light fixed-position navbar-lewagon">
+<div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
   <div class="container-fluid">
     <%= link_to root_path, class: "navbar-brand" do %>
       <%= image_tag "https://iconsplace.com/wp-content/uploads/_icons/ffffff/256/png/death-star-icon-18-256.png" %>
@@ -11,6 +11,14 @@
     <div class="collapse navbar-collapse d-flex align-items-center" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto">
         <% if user_signed_in? %>
+          <%= form_with url: vehicles_path, method: :get, class: "d-flex" do %>
+            <%= text_field_tag :query,
+              params[:query],
+              class: "form-control blur search",
+              placeholder: "Add Filters"
+            %>
+            <%= submit_tag "Search", class: "btn btn-search" %>
+          <% end %>
           <li class="btn btn-opacity btn-outline-light mx-1">
             <%= link_to "Vehicles list", vehicles_path, class: "nav-link" %>
           </li>

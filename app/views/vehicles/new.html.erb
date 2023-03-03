@@ -1,11 +1,3 @@
-<%= render "shared/navbar" %>
-<div class="container container-form">
-  <%= simple_form_for(@vehicle) do |f| %>
-    <%= f.input :name, class: 'form-backgroud' %>
-    <%= f.input :category, collection: Vehicle::CATEGORIES, class: 'form-backgroud' %>
-    <%= f.input :city, class: 'form-backgroud' %>
-    <%= f.input :price, class: 'form-backgroud' %>
-    <%= f.input :images, as: :file, input_html: { multiple: true },  class: 'form-backgroud' %>
-    <%= f.submit %>
-  <% end %>
+<div class="vehicle-form">
+  <%= render 'form', vehicle: @vehicle %>
 </div>

@@ -7,16 +7,19 @@
   background-color: transparent;
   display: flex;
   justify-content: space-between;
+  padding: 10px;
 }
 
 .darker-span {
-  opacity: .5;
+  opacity: .6;
   border: solid white 2px;
-  transition: .3s;
+  transition: .6s;
+  transition: transform .1s;
 
   &:hover {
     opacity: .8;
     transition: .3s;
+    transform: scale(1.1);
   }
 
   img {

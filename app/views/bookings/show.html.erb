@@ -5,7 +5,7 @@
       <h1> <i class="fa-solid fa-shuttle-space"></i>       Selected: <%= @booking.vehicle.name %></h1>
     </div>
     <% if @booking.status == "Pending" %>
-      <div class= "booking-status-pending">
+      <div class= "booking-status-pending button-show-booking">
         <%= @booking.status %>
       </div>
     <% elsif @booking.status == "accepted" %>
@@ -20,18 +20,19 @@
   </div>
   <div class="card-booking">
     <div>
-      <%= cl_image_tag @booking.vehicle.images.first.key, crop: :fill %>
+      <%= cl_image_tag @booking.vehicle.images.first.key, width: 600, crop: :limit, class: "booking-image-show" %>
     </div>
-    <% duration = (@booking.end - @booking.start) + 1 %>
     <div class= "card-description-booking">
       <div class= "description-booking">
-        <h2><i class="fa-regular fa-calendar"></i> &nbsp; From <%= @booking.start.strftime("%B %e, %Y") %> to <%= @booking.end.strftime("%B %e, %Y") %></h2>
+        <i class="fa-regular fa-calendar h2"></i>
+        <h2> &nbsp; From <%= @booking.start.strftime("%B %e, %Y") %> to <%= @booking.end.strftime("%B %e, %Y") %></h2>
       </div>
       <div class= "description-booking">
-        <h2><i class="fa-regular fa-clock"></i> &nbsp; <%= duration.to_i %> days</h2>
+        <% duration = (@booking.end - @booking.start) + 1 %>
+        <i class="fa-regular fa-clock h2"></i><h2> &nbsp; <%= duration.to_i %> days</h2>
       </div>
       <div class= "description-booking">
-        <h2><i class="fa-solid fa-coins"></i> &nbsp; <%= @booking.vehicle.price.to_i * duration.to_i %> <i class="fa-solid fa-euro-sign"></i></h2>
+        <i class="fa-solid fa-coins h2"></i><h2> &nbsp; <%= @booking.vehicle.price.to_i * duration.to_i %> €</h2>
       </div>
     </div>
   </div>

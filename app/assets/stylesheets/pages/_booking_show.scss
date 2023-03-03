@@ -26,7 +26,7 @@
   width: 100vw;
   height: 100vh;
   align-items: center;
-}
+  }
 
 .card-booking{
 display: flex;
@@ -39,17 +39,35 @@ margin: 50px 50px;
 .card-description-booking {
   display: flex;
   flex-direction: column;
-  width: 800px;
 }
 
 .description-booking {
+  display: flex;
   color: white;
-  padding-top: 50px;
-  padding-left: 50px;
+  margin: 20px;
   font-family: 'kanit', sans-serif;
+  border: solid;
+  padding: 20px;
+  border-radius: 10px;
+
+  h2 {
+    margin: 0;
+  }
 }
 
 .img-bookings {
   border-radius: 10px;
   width: 500px;
+}
+
+.booking-image-show {
+  border-radius: 10px;
+}
+
+.button-show-booking {
+  color: orange;
+  background-color: transparent;
+  border: solid;
+  text-transform: capitalize;
+  font-size: large;
 }

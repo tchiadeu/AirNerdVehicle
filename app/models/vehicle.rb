@@ -6,7 +6,7 @@ class Vehicle < ApplicationRecord
   validates :city, presence: true
   validates :category, presence: true, inclusion: { in: CATEGORIES }
   belongs_to :user
-  has_many_attached :photos
+  has_many_attached :images
   geocoded_by :city
   after_validation :geocode, if: :will_save_change_to_city?
 end

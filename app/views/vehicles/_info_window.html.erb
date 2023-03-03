@@ -1,4 +1,4 @@
 <h2> <%= link_to vehicle.name, vehicle_path(vehicle) %></h2>
 <p>City : <%= vehicle.city %></p>
-<p>Price : <%= vehicle.price %> €</p>
+<p>Price : <%= vehicle.price.to_i %> €</p>
 <p>Category : <%= vehicle.category %></p>

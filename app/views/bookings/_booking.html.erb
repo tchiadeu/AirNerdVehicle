@@ -1,0 +1,59 @@
+<% if booking.status == "Pending" %>
+  <div class="card-trip darker-span no-darker">
+    <div>
+      <p><%= booking.user.last_name %></p>
+      <p>From <%= booking.start %> to <%= booking.end %></p>
+      <% duration = (booking.end - booking.start) + 1 %>
+      <p><%= booking.vehicle.price.to_i * duration.to_i %></p>
+      <p><%= booking.vehicle.name %></p>
+      <div class="booking-status-pending">
+        <%= booking.status %>
+      </div>
+    </div>
+    <div>
+      <%= cl_image_tag booking.vehicle.images.first.key, crop: :fill, class: "img-bookings-mini" %>
+    </div>
+    <div class="d-flex justify-content-between"><%= simple_form_for(booking) do |f| %>
+        <%= f.input :status, as: :hidden, input_html: { value: "accepted" } %>
+        <%= f.submit "Accept", class: "btn btn-success" %>
+      <% end %>
+    </div>
+    <div class="d-flex justify-content-between"><%= simple_form_for(booking) do |f| %>
+        <%= f.input :status, as: :hidden, input_html: { value: "declined" } %>
+        <%= f.submit "Decline", class: "btn btn-danger" %>
+      <% end %>
+    </div>
+  </div>
+<% elsif booking.status == "accepted" %>
+  <div class="card-trip darker-span no-darker">
+    <div>
+      <p><%= booking.user.last_name %></p>
+      <p>From <%= booking.start %> to <%= booking.end %></p>
+      <% duration = (booking.end - booking.start) + 1 %>
+      <p><%= booking.vehicle.price.to_i * duration.to_i %></p>
+      <p><%= booking.vehicle.name %></p>
+      <div class="booking-status-accepted">
+        <%= booking.status %>
+      </div>
+    </div>
+    <div>
+      <%= cl_image_tag booking.vehicle.images.first.key, crop: :fill, class: "img-bookings-mini" %>
+    </div>
+  </div>
+<% else %>
+  <div class="card-trip darker-span no-darker">
+    <div class="booking-card-infos">
+      <p><%= booking.user.last_name %></p>
+      <p>From <%= booking.start %> to <%= booking.end %></p>
+      <% duration = (booking.end - booking.start) + 1 %>
+      <p><%= booking.vehicle.price.to_i * duration.to_i %></p>
+      <p><%= booking.vehicle.name %></p>
+      <div class="booking-status-refused">
+        <%= booking.status %>
+      </div>
+    </div>
+    <div>
+      <%= cl_image_tag booking.vehicle.images.first.key, crop: :fill, class: "img-bookings-mini" %>
+    </div>
+  </div>
+<% end %>

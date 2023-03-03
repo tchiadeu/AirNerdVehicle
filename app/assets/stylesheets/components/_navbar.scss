@@ -1,7 +1,6 @@
 .navbar-lewagon {
   justify-content: space-between;
   background: transparent;
-  position: fixed;
   z-index: 1;
   width: 100%;
 
@@ -50,4 +49,12 @@
   font-family: 'kanit', sans-serif;
   font-weight: bold;
   display: none;
+}
+
+.blur {
+  backdrop-filter: blur(6px);
+}
+
+.fixed-position {
+  position: fixed;
 }

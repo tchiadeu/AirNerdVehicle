@@ -18,6 +18,18 @@
   background-size: cover;
   background-position: inherit;
   mask: linear-gradient(to top, transparent, black 100%);
+
+  img {
+    /* Full height */
+    height: 100%;
+    width: 100%;
+    object-fit: none;
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  }
 }
 
 .card-bottom-div {

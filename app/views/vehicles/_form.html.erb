@@ -4,7 +4,7 @@
     <%= f.input :category, collection: Vehicle::CATEGORIES, class: 'form-backgroud' %>
     <%= f.input :city, class: 'form-backgroud' %>
     <%= f.input :price, class: 'form-backgroud' %>
-    <%= f.input :photos, as: :file, input_html: { multiple: true }, class: 'form-backgroud' %>
+    <%= f.input :images, as: :file, input_html: { multiple: true },  class: 'form-backgroud' %>
     <%= f.submit %>
   <% end %>
 </div>

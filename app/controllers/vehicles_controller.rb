@@ -9,7 +9,6 @@ class VehiclesController < ApplicationController
     else
       @vehicles = Vehicle.all
     end
-    
     @markers = @vehicles.geocoded.map do |vehicle|
       {
         lat: vehicle.latitude,
@@ -79,6 +78,6 @@ class VehiclesController < ApplicationController
   end
 
   def vehicle_params
-    params.require(:vehicle).permit(:name, :image, :price, :city, :category, :available, :user, photos: [])
+    params.require(:vehicle).permit(:name, :image, :price, :city, :category, :available, :user, images: [])
   end
 end

@@ -9,3 +9,12 @@ application.register("hello", HelloController)
 
 import MapController from "./map_controller"
 application.register("map", MapController)
+
+import ToggleController from "./toggle_controller"
+application.register("toggle", ToggleController)
+
+import { Application } from '@hotwired/stimulus'
+import Reveal from 'stimulus-reveal-controller'
+
+const application1 = Application.start()
+application1.register('reveal', Reveal)

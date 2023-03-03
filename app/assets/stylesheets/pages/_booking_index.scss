@@ -3,3 +3,67 @@
   src: url('kanit-bold.woff2') format('woff2'),
   url('kanit-bold.woff') format('woff');
 }
+
+.booking-status-pending {
+  padding: 20px;
+  background-color: orange;
+  text-transform: uppercase;
+  font-family: 'kanit', sans-serif;
+  border-radius: 10px;
+}
+
+.booking-status-accepted {
+  padding: 20px;
+  background-color: rgb(0, 134, 18);
+  text-transform: uppercase;
+  font-family: 'kanit', sans-serif;
+  border-radius: 10px;
+}
+
+
+.booking-status-refused {
+  padding: 20px;
+  background-color: rgb(255, 0, 0);
+  text-transform: uppercase;
+  font-family: 'kanit', sans-serif;
+  border-radius: 10px;
+}
+
+.list-bookings {
+  color: antiquewhite;
+}
+
+.img-bookings-mini {
+  border-radius: 10px;
+  width: 200px;
+}
+
+.no-darker {
+  opacity: 1 !important;
+  margin: 20px;
+}
+.booking-list-columns {
+  flex-direction: row;
+  display: flex;
+}
+
+.border-bookings-card-left {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  align-items: center
+}
+
+.border-bookings-card-right {
+  flex-direction: column;
+  display: flex;
+  width: 50%;
+  align-items: center
+}
+
+.booking-card-infos {
+  display: flex;
+  flex-direction: column;
+  align-items: baseline;
+  padding: 10px;
+}

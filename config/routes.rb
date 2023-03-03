@@ -7,8 +7,7 @@ Rails.application.routes.draw do
     resources :bookings, only: %i[new create]
   end
 
-
-  resources :bookings, only: %i[index show]
+  resources :bookings, only: %i[index show update]
 
   post 'bookings/:id', to: 'bookings#accept'
   # Defines the root path route ("/")

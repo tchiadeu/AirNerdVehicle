@@ -1,31 +1,33 @@
 <div class="background-set">
-  <div class="grid-index-start">
-    <div class="cards">
-      <% @vehicles.each do |vehicle| %>
-        <div class="card-category">
-          <div class="card-trip darker-span">
-            <%= link_to vehicle_path(vehicle), class:"text-decoration-none" do %>
-              <img src="<%= vehicle.image %>" />
-              <div class="card-vehicle-infos">
-                <div>
-                  <h2><%= vehicle.name %></h2>
-                  <p><%= vehicle.city %> | <%= vehicle.category %></p>
+  <div data-controller='reveal' data-reveal-hidden-class="d-none">
+    <div data-reveal-target="item" class="grid-index-start">
+      <div class="cards">
+        <% @vehicles.each do |vehicle| %>
+          <div class="card-category">
+            <div class="card-trip darker-span">
+              <%= link_to vehicle_path(vehicle), class:"text-decoration-none" do %>
+                <%= cl_image_tag vehicle.images.first.key, crop: :fill %>
+                <div class="card-vehicle-infos">
+                  <div>
+                    <h2><%= vehicle.name %></h2>
+                    <p><%= vehicle.city %> | <%= vehicle.category %></p>
+                  </div>
+                  <div>
+                    <h2 class="card-trip-pricing"><%= vehicle.price %>€</h2>
+                  </div>
                 </div>
-                <div>
-                  <h2 class="card-trip-pricing"><%= vehicle.price %>€</h2>
-                </div>
-              </div>
-            <% end %>
-            <div class="card__shine"></div>
-            <div class="card__glare"></div>
+              <% end %>
+            </div>
           </div>
-        </div>
-      <% end %>
+        <% end %>
+      </div>
     </div>
-  </div>
-  <div style="width: 100%; height: 600px;"
-    data-controller="map"
-    data-map-markers-value="<%= @markers.to_json %>"
-    data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+    <div style="width: 100%; height: 600px;"
+      data-reveal-target="item" class="map"
+      data-controller="map"
+      data-map-markers-value="<%= @markers.to_json %>"
+      data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+    </div>
+    <%# <button data-action="click->reveal#toggle">Switch List / Map</button> %>
   </div>
 </div>

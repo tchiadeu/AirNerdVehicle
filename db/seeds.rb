@@ -1,4 +1,5 @@
 require 'date'
+require 'open-uri'
 
 User.destroy_all
 
@@ -9,6 +10,16 @@ User.create!(email: 'test4@test.com', password: 'password', password_confirmatio
 
 Vehicle.destroy_all
 
+file1 = URI.open('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTbLFKaIBd1Hs6MZGm8_Y4YE7MyTOFrWlBZrQ&usqp=CAU')
+file2 = URI.open('https://www.motortrend.com/uploads/2022/03/1982_DeLorean_DMC-12_Time_Machine_Mecum_11.jpg')
+file3 = URI.open('https://i.pinimg.com/736x/23/4c/9f/234c9f872637c7d20d75a1294df2fa2c.jpg')
+file4 = URI.open('https://images.hdqwalls.com/wallpapers/batman-batmobile-img.jpg')
+file5 = URI.open('https://i.pinimg.com/originals/68/1b/54/681b5411369353221a1109fbaff9237b.jpg')
+vehicle1 = Vehicle.create(user_id: User.first.id, name: 'Millenium Falcon', price: 1000, city: 'Kiev', category: 'SF')
+vehicle2 = Vehicle.create(user_id: User.first.id, name: 'DeLorean DMC-12', price: 220, city: 'Rennes', category: 'SF')
+vehicle3 = Vehicle.create(user_id: User.first.id, name: 'the Flying Dutchman', price: 700, city: 'Saint-Domingue', category: 'Fantasy')
+vehicle4 = Vehicle.create(user_id: User.last.id, name: 'Batmobile', price: 190, city: 'Gotham City', category: 'Superheroes')
+vehicle5 = Vehicle.create(user_id: User.last.id, name: 'Toyota Fast & Furious', price: 150, city: 'Los Angeles', category: 'Classical')
 Vehicle.create(user_id: User.first.id, name: 'Millenium Falcon', price: 10000, city: 'Kiev', category: 'SF', available: true, image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTbLFKaIBd1Hs6MZGm8_Y4YE7MyTOFrWlBZrQ&usqp=CAU')
 Vehicle.create(user_id: User.first.id, name: 'DeLorean DMC-12', price: 1200, city: 'Rennes', category: 'SF', available: true, image: 'https://www.motortrend.com/uploads/2022/03/1982_DeLorean_DMC-12_Time_Machine_Mecum_11.jpg')
 Vehicle.create(user_id: User.first.id, name: 'the Flying Dutchman', price: 1500, city: 'Saint-Domingue', category: 'Fantasy', available: true, image: 'https://i.pinimg.com/736x/23/4c/9f/234c9f872637c7d20d75a1294df2fa2c.jpg')
@@ -19,6 +30,16 @@ Vehicle.create(user_id: User.last.id, name: 'Le Bus Magique', price: 10, city: '
 Vehicle.create(user_id: User.last.id, name: 'Tapis volant Alladin', price: 800, city: 'Khartoum', category: 'Classical', available: true, image: 'https://disney-planet.fr/wp-content/uploads/2016/11/tapis-magique-personnage-aladdin-06.jpg')
 Vehicle.create(user_id: User.last.id, name: 'Traineau de Papa Noël', price: 1, city: 'Upernavik', category: 'superheroes', available: true, image: 'http://www.etrepagny.fr/wp-content/uploads/2018/12/fabrication-traineau-pere-norel-etrepagny-2018-13.jpg')
 Vehicle.create(user_id: User.last.id, name: 'Le Chat-Bus', price: 1200, city: 'Tokyo', category: 'fantasy', available: true, image: 'https://kultt.fr/wp-content/uploads/2018/06/chatbus-velo-Hiroshima-uai-640x360.jpg')
+vehicle1.images.attach(io: file1, filename: '1', content_type: "image/png")
+vehicle2.images.attach(io: file2, filename: '2', content_type: "image/png")
+vehicle3.images.attach(io: file3, filename: '3', content_type: "image/png")
+vehicle4.images.attach(io: file4, filename: '4', content_type: "image/png")
+vehicle5.images.attach(io: file5, filename: '5', content_type: "image/png")
+vehicle1.save
+vehicle2.save
+vehicle3.save
+vehicle4.save
+vehicle5.save
 
 Booking.destroy_all
 

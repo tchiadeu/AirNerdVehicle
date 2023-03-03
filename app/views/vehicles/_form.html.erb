@@ -1,10 +1,10 @@
 <div class="container container-form">
   <%= simple_form_for(vehicle) do |f| %>
-    <%= f.input :name %>
-    <%= f.input :category, collection: Vehicle::CATEGORIES %>
-    <%= f.input :city %>
-    <%= f.input :price %>
-    <%= f.input :photos, as: :file, input_html: { multiple: true } %>
+    <%= f.input :name, class: 'form-backgroud' %>
+    <%= f.input :category, collection: Vehicle::CATEGORIES, class: 'form-backgroud' %>
+    <%= f.input :city, class: 'form-backgroud' %>
+    <%= f.input :price, class: 'form-backgroud' %>
+    <%= f.input :images, as: :file, input_html: { multiple: true },  class: 'form-backgroud' %>
     <%= f.submit %>
   <% end %>
 </div>

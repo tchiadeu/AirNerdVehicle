@@ -1,5 +1,7 @@
-<div class="banner-show" style="background-image: url(<%= "#{@vehicle.image}" %>)"></div>
-<div class="container mx-5">
+<div class="banner-show">
+  <%= cl_image_tag @vehicle.images.first.key, crop: :fill %>
+</div>
+<div class="">
   <div class="card-bottom-div">
     <div class="card-details">
       <h2 class="card-name"><%= @vehicle.name %></h2>

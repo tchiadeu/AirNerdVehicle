@@ -5,7 +5,7 @@
         <div class="card-category">
           <div class="card-trip darker-span">
             <%= link_to vehicle_path(vehicle), class:"text-decoration-none" do %>
-              <img src="<%= vehicle.image %>" />
+              <%= cl_image_tag vehicle.images.first.key, crop: :fill %>
               <div class="card-vehicle-infos">
                 <div>
                   <h2><%= vehicle.name %></h2>
@@ -21,4 +21,3 @@
       <% end %>
     </div>
   </div>
-</div>

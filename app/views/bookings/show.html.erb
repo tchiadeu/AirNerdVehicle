@@ -22,7 +22,7 @@
   </div>
   <div class="card-booking">
     <div>
-      <img src= <%= @booking.vehicle.image %> alt="" class= "img-bookings">
+      <%= cl_image_tag @booking.vehicle.images.first.key, crop: :fill, class: "img-bookings-mini" %>
     </div>
     <% duration = @booking.end - @booking.start %>
     <div class= "card-description-booking">

@@ -13,7 +13,7 @@
                   <p><%= vehicle.city %> | <%= vehicle.category %></p>
                 </div>
                 <div>
-                  <h2 class="card-trip-pricing"><%= vehicle.price %>€</h2>
+                  <h2 class="card-trip-pricing"><%= vehicle.price.to_i %>€</h2>
                 </div>
               </div>
             <% end %>

@@ -21,7 +21,7 @@
               </div>
             </div>
             <div>
-              <img src= <%= booking.vehicle.image %> alt="" class= "img-bookings-mini">
+              <%= cl_image_tag booking.vehicle.images.first.key, crop: :fill, class: "img-bookings-mini" %>
             </div>
             <div class="d-flex justify-content-between"><%= simple_form_for(booking) do |f| %>
                 <%= f.input :status, as: :hidden, input_html: { value: "accepted" } %>
@@ -47,7 +47,7 @@
               </div>
             </div>
             <div>
-              <img src= <%= booking.vehicle.image %> alt="" class= "img-bookings-mini">
+              <%= cl_image_tag booking.vehicle.images.first.key, crop: :fill, class: "img-bookings-mini" %>
             </div>
           </div>
         <% else %>
@@ -63,7 +63,7 @@
               </div>
             </div>
             <div>
-              <img src= <%= booking.vehicle.image %> alt="" class= "img-bookings-mini">
+              <%= cl_image_tag booking.vehicle.images.first.key, crop: :fill, class: "img-bookings-mini" %>
             </div>
           </div>
         <% end %>
@@ -84,7 +84,7 @@
               </div>
             </div>
             <div>
-              <img src= <%= booking.vehicle.image %> alt="" class= "img-bookings-mini">
+              <%= cl_image_tag booking.vehicle.images.first.key, crop: :fill, class: "img-bookings-mini" %>
             </div>
           </div>
         <% elsif booking.status == "accepted" %>
@@ -100,7 +100,7 @@
               </div>
             </div>
             <div>
-              <img src= <%= booking.vehicle.image %> alt="" class= "img-bookings-mini">
+              <%= cl_image_tag booking.vehicle.images.first.key, crop: :fill, class: "img-bookings-mini" %>
             </div>
           </div>
         <% else %>
@@ -116,7 +116,7 @@
               </div>
             </div>
             <div>
-              <img src= <%= booking.vehicle.image %> alt="" class= "img-bookings-mini">
+              <%= cl_image_tag booking.vehicle.images.first.key, crop: :fill, class: "img-bookings-mini" %>
             </div>
           </div>
         <% end %>

@@ -34,8 +34,8 @@
 }
 
 .img-bookings-mini {
-  border-radius: 10px;
   width: 200px;
+  overflow: hidden;
 }
 
 .no-darker {
@@ -67,3 +67,14 @@
   align-items: baseline;
   padding: 10px;
 }
+
+.text-btn {
+  color: white !important;
+  font-family: 'kanit', sans-serif !important;
+  font-weight: bold !important;
+}
+
+/*
+.of-none {
+  object-fit: cover;
+} */

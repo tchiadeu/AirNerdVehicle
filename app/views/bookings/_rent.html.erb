@@ -7,7 +7,7 @@
       <p><%= booking.user.last_name %></p>
       <p>From <%= booking.start %> to <%= booking.end %></p>
       <% duration = (booking.end - booking.start) + 1 %>
-      <p><%= booking.vehicle.price.to_i * duration.to_i %></p>
+      <p><%= booking.vehicle.price.to_i * duration.to_i %> €</p>
       <p><%= booking.vehicle.name %></p>
       <div class="booking-status-pending">
         <%= booking.status %>
@@ -23,7 +23,7 @@
       <p><%= booking.user.last_name %></p>
       <p>From <%= booking.start %> to <%= booking.end %></p>
       <% duration = (booking.end - booking.start) + 1 %>
-      <p><%= booking.vehicle.price.to_i * duration.to_i %></p>
+      <p><%= booking.vehicle.price.to_i * duration.to_i %> €</p>
       <p><%= booking.vehicle.name %></p>
       <div class="booking-status-accepted">
         <%= booking.status %>
@@ -39,7 +39,7 @@
       <p><%= booking.user.last_name %></p>
       <p>From <%= booking.start %> to <%= booking.end %></p>
       <% duration = (booking.end - booking.start) +1 %>
-      <p><%= booking.vehicle.price.to_i * duration.to_i %></p>
+      <p><%= booking.vehicle.price.to_i * duration.to_i %> €</p>
       <p><%= booking.vehicle.name %></p>
       <div class="booking-status-refused">
         <%= booking.status %>

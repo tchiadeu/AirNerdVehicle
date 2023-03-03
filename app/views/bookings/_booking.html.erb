@@ -4,10 +4,11 @@
       <%= cl_image_tag booking.vehicle.images.first.key, crop: :fit, class: "img-bookings-mini w-100 h-100" %>
     </div>
     <div class="d-flex flex-column w-25 px-2">
+      <p><strong><%= booking.vehicle.name %></strong></p>
       <p><%= booking.user.last_name %></p>
       <p><%= booking.start %> to <%= booking.end %></p>
       <% duration = (booking.end - booking.start) + 1 %>
-      <p><%= booking.vehicle.price.to_i * duration.to_i %></p>
+      <p><%= booking.vehicle.price.to_i * duration.to_i %> €</p>
       <% if booking.user == current_user %>
         <div class="booking-status-pending">
           <%= booking.status %>
@@ -32,11 +33,11 @@
       <%= cl_image_tag booking.vehicle.images.first.key, crop: :fit, class: "img-bookings-mini w-100 h-100" %>
     </div>
     <div class="d-flex flex-column w-25 px-2">
+      <p><strong><%= booking.vehicle.name %></strong></p>
       <p><%= booking.user.last_name %></p>
       <p><%= booking.start %> to <%= booking.end %></p>
       <% duration = (booking.end - booking.start) + 1 %>
-      <p><%= booking.vehicle.price.to_i * duration.to_i %></p>
-      <p><%= booking.vehicle.name %></p>
+      <p><%= booking.vehicle.price.to_i * duration.to_i %> €</p>
       <div class="booking-status-accepted">
         <%= booking.status %>
       </div>
@@ -48,11 +49,11 @@
       <%= cl_image_tag booking.vehicle.images.first.key, crop: :fit, class: "img-bookings-mini w-100 h-100" %>
     </div>
     <div class="d-flex flex-column w-25 px-2">
+      <p><strong><%= booking.vehicle.name %></strong></p>
       <p><%= booking.user.last_name %></p>
       <p><%= booking.start %> to <%= booking.end %></p>
       <% duration = (booking.end - booking.start) + 1 %>
-      <p><%= booking.vehicle.price.to_i * duration.to_i %></p>
-      <p><%= booking.vehicle.name %></p>
+      <p><%= booking.vehicle.price.to_i * duration.to_i %> €</p>
       <div class="booking-status-refused">
         <%= booking.status %>
       </div>

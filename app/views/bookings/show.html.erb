@@ -16,15 +16,12 @@
           <%= @booking.status %>
       </div>
     <% end %>
-    <div class= "btn btn-opacity btn-outline-light mx-1">
-      <%= link_to 'Cancel your booking' %>
-    </div>
   </div>
   <div class="card-booking">
     <div>
-      <%= cl_image_tag @booking.vehicle.images.first.key, crop: :fill, class: "img-bookings-mini" %>
+      <%= cl_image_tag @booking.vehicle.images.first.key, crop: :fill %>
     </div>
-    <% duration = @booking.end - @booking.start %>
+    <% duration = (@booking.end - @booking.start) + 1 %>
     <div class= "card-description-booking">
       <div class= "description-booking">
         <h2><i class="fa-regular fa-calendar"></i> &nbsp; From <%= @booking.start.strftime("%B %e, %Y") %> to <%= @booking.end.strftime("%B %e, %Y") %></h2>

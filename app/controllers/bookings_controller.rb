@@ -1,7 +1,8 @@
 class BookingsController < ApplicationController
   def index
-    @bookings = Booking.where(vehicle_id: current_user.vehicles)
-    @rents = Booking.where(user_id: current_user)
+    @bookings = set_bookings
+    # @bookings = Booking.where(vehicle_id: current_user.vehicles)
+    @rents = set_rents
   end
 
   def show
@@ -46,5 +47,21 @@ class BookingsController < ApplicationController
 
   def booking_params
     params.require(:booking).permit(:start, :end, :status)
+  end
+
+  def set_bookings
+    bookings = Booking.where(vehicle_id: current_user.vehicles)
+    pending_bookings = bookings.where(status: "Pending").order(created_at: :desc)
+    accepted_bookings = bookings.where(status: "accepted").order(start: :asc)
+    declined_bookings = bookings.where(status: "declined").order(created_at: :desc)
+    @bookings = pending_bookings + accepted_bookings + declined_bookings
+  end
+
+  def set_rents
+    rents = Booking.where(user_id: current_user)
+    pending_rents = rents.where(status: "Pending").order(created_at: :desc)
+    accepted_rents = rents.where(status: "accepted").order(start: :asc)
+    declined_rents = rents.where(status: "declined").order(created_at: :desc)
+    @rents = pending_rents + accepted_rents + declined_rents
   end
 end
